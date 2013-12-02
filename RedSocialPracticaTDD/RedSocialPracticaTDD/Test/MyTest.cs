@@ -1,12 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using FluentAssertions;
+using NUnit.Framework;
 
 namespace RedSocialPracticaTDD.Test
 {
-    class MyTest
+     [TestFixture]
+    public class MyTest
     {
+         [Test]
+         public void RegisterNonExistingUserReturnsNothing()
+         {
+             UserManagement userManagement = new UserManagement();
+             try
+             {
+                 userManagement.Register("New User");
+             }
+             catch (Exception)
+             {
+                 Assert.Fail();
+             }
+         }
     }
 }
