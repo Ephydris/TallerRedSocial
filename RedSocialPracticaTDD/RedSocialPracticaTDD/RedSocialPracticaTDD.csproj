@@ -49,9 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UserManagement.cs" />
+    <Compile Include="Test\FollowUserTest.cs" />
+    <Compile Include="Core\User.cs" />
+    <Compile Include="Core\UserRepo.cs" />
+    <Compile Include="Core\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test\MyTest.cs" />
+    <Compile Include="Test\RegisterUserTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
