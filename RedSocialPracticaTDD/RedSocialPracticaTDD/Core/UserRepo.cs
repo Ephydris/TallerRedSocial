@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace RedSocialPracticaTDD.Core
 {
-    public class UserRepo
+    public class UserRepo:IUserRepo
     {
         List<User> _userList = new List<User>();
         public void Add(string newUser)

@@ -6,9 +6,9 @@ namespace RedSocialPracticaTDD.Core
     public class UserService
     {
      
-        private UserRepo _repo;
+        private IUserRepo _repo;
 
-        public UserService(UserRepo userRepo)
+        public UserService(IUserRepo userRepo)
         {
             _repo = userRepo;
         }
