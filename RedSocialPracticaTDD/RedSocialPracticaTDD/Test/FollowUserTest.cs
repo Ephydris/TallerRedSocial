@@ -6,7 +6,7 @@ namespace RedSocialPracticaTDD.Test
 {
     public class FollowUserTest
     {
-        private UserService _userManagement;
+        private UserService _userService;
         private const string NEW_USER = "New User";
         private const string ANOTHER_NEW_USER = "Another New User";
         private const string MORE_NEW_USER = "More New User";
@@ -14,25 +14,25 @@ namespace RedSocialPracticaTDD.Test
         [SetUp]
         public void TestSetUp()
         {
-            _userManagement = new UserService(new UserRepo());
+            _userService = new UserService(new UserRepo());
 
-            _userManagement.Register(NEW_USER);
-            _userManagement.Register(MORE_NEW_USER);
-            _userManagement.Register(ANOTHER_NEW_USER);
+            _userService.Register(NEW_USER);
+            _userService.Register(MORE_NEW_USER);
+            _userService.Register(ANOTHER_NEW_USER);
         }
 
         [Test]
         public void UserCanFollowOtherUser()
         {
-            _userManagement.Follow(NEW_USER, ANOTHER_NEW_USER);
-            Assert.AreEqual(new List<string> { NEW_USER }, _userManagement.GetFollowers(ANOTHER_NEW_USER));
+            _userService.Follow(NEW_USER, ANOTHER_NEW_USER);
+            Assert.AreEqual(new List<string> { NEW_USER }, _userService.GetFollowers(ANOTHER_NEW_USER));
         }
         [Test]
         public void UserCanFollowMoreThanOneUser()
         {
-            _userManagement.Follow(NEW_USER, MORE_NEW_USER);
-            _userManagement.Follow(ANOTHER_NEW_USER, MORE_NEW_USER);
-            Assert.AreEqual(new List<string> { NEW_USER, ANOTHER_NEW_USER }, _userManagement.GetFollowers(MORE_NEW_USER));
+            _userService.Follow(NEW_USER, MORE_NEW_USER);
+            _userService.Follow(ANOTHER_NEW_USER, MORE_NEW_USER);
+            Assert.AreEqual(new List<string> { NEW_USER, ANOTHER_NEW_USER }, _userService.GetFollowers(MORE_NEW_USER));
         }
     }
 }
