@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\IUserRepo.cs" />
+    <Compile Include="Core\UserFileRepo.cs" />
     <Compile Include="Test\FollowUserTest.cs" />
     <Compile Include="Core\User.cs" />
     <Compile Include="Core\UserRepo.cs" />
