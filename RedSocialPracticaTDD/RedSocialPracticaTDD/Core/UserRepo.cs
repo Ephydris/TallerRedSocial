@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace RedSocialPracticaTDD.Core
+namespace Core
 {
     public class UserRepo:IUserRepo
     {

@@ -1,6 +1,6 @@
 ﻿using System;
+using Core;
 using NUnit.Framework;
-using RedSocialPracticaTDD.Core;
 
 namespace RedSocialPracticaTDD.Test
 {

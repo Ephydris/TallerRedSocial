@@ -1,6 +1,6 @@
 using System.Collections.Generic;
+using Core;
 using NUnit.Framework;
-using RedSocialPracticaTDD.Core;
 
 namespace RedSocialPracticaTDD.Test
 {

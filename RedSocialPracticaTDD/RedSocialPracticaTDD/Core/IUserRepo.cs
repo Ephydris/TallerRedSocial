@@ -1,6 +1,5 @@
 ﻿
-
-namespace RedSocialPracticaTDD.Core
+namespace Core
 {
     public interface IUserRepo
     {

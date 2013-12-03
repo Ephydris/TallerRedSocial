@@ -1,7 +1,7 @@
 ﻿
 using System.Collections.Generic;
 
-namespace RedSocialPracticaTDD.Core
+namespace Core
 {
     public class User
     {

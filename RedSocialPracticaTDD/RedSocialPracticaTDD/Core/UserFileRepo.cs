@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace RedSocialPracticaTDD.Core
+namespace Core
 {
     public class UserFileRepo : IUserRepo
     {
