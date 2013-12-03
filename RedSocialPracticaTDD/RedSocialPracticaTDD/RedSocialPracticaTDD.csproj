@@ -7,8 +7,8 @@
     <ProjectGuid>{9F3CFB93-6116-42CB-B8A2-806AAF3C3294}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RedSocialPracticaTDD</RootNamespace>
-    <AssemblyName>RedSocialPracticaTDD</AssemblyName>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
