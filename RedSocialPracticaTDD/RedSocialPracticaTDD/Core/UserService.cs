@@ -17,7 +17,7 @@ namespace Core
         {
             if (_repo.ExistUser(newUser))
             {
-                throw new Exception();
+                throw new Exception("Existing User");
             }
             _repo.Add(newUser);
         }
