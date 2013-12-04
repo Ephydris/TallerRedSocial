@@ -55,7 +55,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test\CLIWindow.cs" />
+    <Compile Include="CLIWindow.cs" />
+    <Compile Include="Roar\RoarListRepo.cs" />
+    <Compile Include="Roar\RoarService.cs" />
+    <Compile Include="Roar\RoarList.cs" />
+    <Compile Include="Test\RoarTest.cs" />
     <Compile Include="UserServiceProxy.cs" />
     <Compile Include="CommandExecuter.cs" />
     <Compile Include="IUserServiceProxy.cs" />
