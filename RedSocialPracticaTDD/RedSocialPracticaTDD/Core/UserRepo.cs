@@ -20,5 +20,10 @@ namespace Core
         {
             return _userList.First(p => p.Name == user);
         }
+
+        public void Save()
+        {
+            
+        }
     }
 }

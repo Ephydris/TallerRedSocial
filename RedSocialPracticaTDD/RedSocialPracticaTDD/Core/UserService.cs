@@ -20,11 +20,13 @@ namespace Core
                 throw new Exception("Existing User");
             }
             _repo.Add(newUser);
+            _repo.Save();
         }
 
         public void Follow(string follower, string userFollowed)
         {
             _repo.Find(userFollowed).AddFollower(follower);
+            _repo.Save();
 
         }
         public List<string> GetFollowers(string user)

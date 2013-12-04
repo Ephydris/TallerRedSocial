@@ -1,69 +1,78 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Core
 {
     public class UserFileRepo : IUserRepo
     {
+        private List<User> _userList = new List<User>();
         private const string FileRepo = "UserRepo.txt";
+
+        public UserFileRepo()
+        {
+            _userList=new List<User>();
+            ReadFromFile();
+        }
 
         public void Add(string newUser)
         {
-            using (StreamWriter writer = File.AppendText(FileRepo))
-            {
-                writer.WriteLine(newUser);
-            }
+           _userList.Add(new User(newUser));
         }
 
         public bool ExistUser(string user)
         {
-            try
-            {
-                return !string.IsNullOrEmpty(SearchUserLineInFile(user));
-            }
-            catch (Exception)
-            {
-                throw new Exception("Error reading Repo File");
-            }
+                return _userList.Exists(p => p.Name == user);           
         }
 
         public User Find(string username)
         {
-            try
+            return _userList.Find(p => p.Name == username);
+        }
+
+        public void Save()
+        {
+            String text = UserListToText();
+            System.IO.File.WriteAllText(FileRepo, text);
+          
+        }
+
+        private string UserListToText()
+        {
+            string Text = string.Empty;
+            foreach (User user in _userList)
             {
-                User user;
-                var userInfo = SearchUserLineInFile(username).Split(',');
-                user = new User(username);
+                Text += user.Name;
+                foreach (string follower in user.GetFollowers())
+                {
+                    Text += "," + follower;
+                }
+                Text += "\r\n";
+            }
+            return Text;
+        }
+
+        private void ReadFromFile()
+        {
+            if (File.Exists(FileRepo))
+            {
+                var Text = File.ReadAllLines(FileRepo);
+                FileToList(Text);
+            }
+        }
+
+        private void FileToList(string[] Text)
+        {
+            foreach (string line in Text)
+            {
+                var userInfo = line.Split(',');
+                User user = new User(userInfo[0]);
                 for (int i = 1; i <= userInfo.Length - 1; i++)
                 {
                     user.AddFollower(userInfo[i]);
                 }
-
-                return user;
-            }
-            catch (Exception)
-            {
-
-                throw new Exception("Error reading Repo File");
+                _userList.Add(user);
             }
         }
-
-
-        private static String SearchUserLineInFile(string user)
-       {
-           if (File.Exists(FileRepo))
-           {
-               using (StreamReader sr = new StreamReader(FileRepo))
-               {
-                   while (sr.Peek() >= 0)
-                   {
-                       string line = sr.ReadLine();
-                       if (line.Split(',')[0] == user)
-                           return line;
-                   }
-               }
-           }
-           return null;
-       }
     }
 }
