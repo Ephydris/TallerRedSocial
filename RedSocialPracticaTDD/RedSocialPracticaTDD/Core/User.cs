@@ -5,7 +5,7 @@ namespace Core
 {
     public class User
     {
-       public List<string> _followers;
+       private List<string> _followers;
 
         public string Name{get; set;}
 
