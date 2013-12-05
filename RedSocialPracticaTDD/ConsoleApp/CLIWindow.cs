@@ -1,6 +1,7 @@
 ﻿
 
 using System;
+using Core;
 
 namespace ConsoleApp.Test
 {
@@ -9,7 +10,7 @@ namespace ConsoleApp.Test
         private static CommandExecuter commandExecuter;
         public static void Main()
         {
-            commandExecuter = new CommandExecuter(new UserServiceProxy());
+            commandExecuter = new CommandExecuter(new UserService(new UserFileRepo()));
             string command=Console.ReadLine();
             while (command != "exit")
             {

@@ -1,13 +1,14 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using Core;
 
 namespace ConsoleApp
 {
     public class CommandExecuter
     {
-        private IUserServiceProxy _proxy;
-        public CommandExecuter(IUserServiceProxy proxy)
+        private UserService _proxy;
+        public CommandExecuter(UserService proxy)
         {
             _proxy = proxy;
         }
