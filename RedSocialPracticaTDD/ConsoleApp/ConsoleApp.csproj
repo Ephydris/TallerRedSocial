@@ -38,9 +38,6 @@
     <Reference Include="Core">
       <HintPath>..\RedSocialPracticaTDD\bin\Debug\Core.dll</HintPath>
     </Reference>
-    <Reference Include="Moq">
-      <HintPath>..\..\..\..\..\Desktop\Moq.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Documents\TDD Practice\TDD Practice\bin\Debug\nunit.framework.dll</HintPath>
@@ -60,10 +57,7 @@
     <Compile Include="Roar\RoarService.cs" />
     <Compile Include="Roar\RoarList.cs" />
     <Compile Include="Test\RoarTest.cs" />
-    <Compile Include="UserServiceProxy.cs" />
     <Compile Include="CommandExecuter.cs" />
-    <Compile Include="IUserServiceProxy.cs" />
-    <Compile Include="Test\ConsoleAppTest.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
